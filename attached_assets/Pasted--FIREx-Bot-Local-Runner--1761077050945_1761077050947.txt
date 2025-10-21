@@ -1,0 +1,108 @@
+========================================
+FIREx Bot - Local Runner
+========================================
+
+Checking Python packages...
+This may take 1-2 minutes for first time...
+Collecting python-telegram-bot==20.8 (from -r requirements.txt (line 2))
+  Downloading python_telegram_bot-20.8-py3-none-any.whl.metadata (15 kB)
+Collecting requests==2.31.0 (from -r requirements.txt (line 3))
+  Using cached requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+Collecting beautifulsoup4==4.12.2 (from -r requirements.txt (line 4))
+  Using cached beautifulsoup4-4.12.2-py3-none-any.whl.metadata (3.6 kB)
+Collecting Flask==2.3.3 (from -r requirements.txt (line 5))
+  Using cached flask-2.3.3-py3-none-any.whl.metadata (3.6 kB)
+Collecting gunicorn==21.2.0 (from -r requirements.txt (line 6))
+  Using cached gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 7))
+  Downloading python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB)
+Collecting httpx~=0.26.0 (from python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Downloading httpx-0.26.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting charset-normalizer<4,>=2 (from requests==2.31.0->-r requirements.txt (line 3))
+  Downloading charset_normalizer-3.4.4-cp312-cp312-win32.whl.metadata (38 kB)
+Collecting idna<4,>=2.5 (from requests==2.31.0->-r requirements.txt (line 3))
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting urllib3<3,>=1.21.1 (from requests==2.31.0->-r requirements.txt (line 3))
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests==2.31.0->-r requirements.txt (line 3))
+  Using cached certifi-2025.10.5-py3-none-any.whl.metadata (2.5 kB)
+Collecting soupsieve>1.2 (from beautifulsoup4==4.12.2->-r requirements.txt (line 4))
+  Using cached soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+Collecting Werkzeug>=2.3.7 (from Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting Jinja2>=3.1.2 (from Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting itsdangerous>=2.1.2 (from Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting click>=8.1.3 (from Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached click-8.3.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting blinker>=1.6.2 (from Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting packaging (from gunicorn==21.2.0->-r requirements.txt (line 6))
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting colorama (from click>=8.1.3->Flask==2.3.3->-r requirements.txt (line 5))
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting anyio (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Downloading anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting httpcore==1.* (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting sniffio (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting MarkupSafe>=2.0 (from Jinja2>=3.1.2->Flask==2.3.3->-r requirements.txt (line 5))
+  Downloading markupsafe-3.0.3-cp312-cp312-win32.whl.metadata (2.8 kB)
+Collecting typing_extensions>=4.5 (from anyio->httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2))
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Downloading python_telegram_bot-20.8-py3-none-any.whl (604 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 604.9/604.9 kB 954.7 kB/s eta 0:00:00
+Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Using cached beautifulsoup4-4.12.2-py3-none-any.whl (142 kB)
+Using cached flask-2.3.3-py3-none-any.whl (96 kB)
+Using cached gunicorn-21.2.0-py3-none-any.whl (80 kB)
+Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB)
+Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Using cached certifi-2025.10.5-py3-none-any.whl (163 kB)
+Downloading charset_normalizer-3.4.4-cp312-cp312-win32.whl (99 kB)
+Using cached click-8.3.0-py3-none-any.whl (107 kB)
+Downloading httpx-0.26.0-py3-none-any.whl (75 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached soupsieve-2.8-py3-none-any.whl (36 kB)
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Using cached werkzeug-3.1.3-py3-none-any.whl (224 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Downloading markupsafe-3.0.3-cp312-cp312-win32.whl (14 kB)
+Downloading anyio-4.11.0-py3-none-any.whl (109 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Installing collected packages: urllib3, typing_extensions, soupsieve, sniffio, python-dotenv, packaging, MarkupSafe, itsdangerous, idna, h11, colorama, charset-normalizer, certifi, blinker, Werkzeug, requests, Jinja2, httpcore, gunicorn, click, beautifulsoup4, anyio, httpx, Flask, python-telegram-bot
+Successfully installed Flask-2.3.3 Jinja2-3.1.6 MarkupSafe-3.0.3 Werkzeug-3.1.3 anyio-4.11.0 beautifulsoup4-4.12.2 blinker-1.9.0 certifi-2025.10.5 charset-normalizer-3.4.4 click-8.3.0 colorama-0.4.6 gunicorn-21.2.0 h11-0.16.0 httpcore-1.0.9 httpx-0.26.0 idna-3.11 itsdangerous-2.2.0 packaging-25.0 python-dotenv-1.0.0 python-telegram-bot-20.8 requests-2.31.0 sniffio-1.3.1 soupsieve-2.8 typing_extensions-4.15.0 urllib3-2.5.0
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+Starting FIREx Bot...
+Press Ctrl+C to stop
+
+2025-10-22 01:33:50,408 - __main__ - WARNING - ⚠️ BOT_TOKEN not set - Bot will not start!
+2025-10-22 01:33:50,408 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+ * Serving Flask app 'app'
+ * Debug mode: on
+2025-10-22 01:33:50,709 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.125.145.75:5000
+2025-10-22 01:33:50,709 - werkzeug - INFO - Press CTRL+C to quit
+2025-10-22 01:33:50,718 - werkzeug - INFO -  * Restarting with stat
+2025-10-22 01:33:51,772 - __main__ - INFO - 🎯 Starting bot in background thread...
+2025-10-22 01:33:51,773 - __main__ - INFO - 🚀 Starting bot in background...
+2025-10-22 01:33:51,773 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+2025-10-22 01:33:51,858 - werkzeug - WARNING -  * Debugger is active!
+2025-10-22 01:33:51,862 - werkzeug - INFO -  * Debugger PIN: 182-513-303
+2025-10-22 01:33:53,100 - __main__ - ERROR - ❌ Bot setup error: Updater.__init__() got an unexpected keyword argument 'use_context'
+2025-10-22 01:33:53,100 - __main__ - ERROR - ❌ Failed to setup bot
