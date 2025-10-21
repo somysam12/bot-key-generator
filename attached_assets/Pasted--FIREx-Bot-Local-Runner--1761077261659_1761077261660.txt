@@ -1,0 +1,65 @@
+========================================
+FIREx Bot - Local Runner
+========================================
+
+Checking Python packages...
+This may take 1-2 minutes for first time...
+Collecting python-telegram-bot==20.8 (from -r requirements.txt (line 2))
+  Using cached python_telegram_bot-20.8-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: requests==2.31.0 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from -r requirements.txt (line 3)) (2.31.0)
+Requirement already satisfied: beautifulsoup4==4.12.2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from -r requirements.txt (line 4)) (4.12.2)
+Requirement already satisfied: Flask==2.3.3 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from -r requirements.txt (line 5)) (2.3.3)
+Requirement already satisfied: gunicorn==21.2.0 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from -r requirements.txt (line 6)) (21.2.0)
+Requirement already satisfied: python-dotenv==1.0.0 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from -r requirements.txt (line 7)) (1.0.0)
+Requirement already satisfied: httpx~=0.26.0 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from python-telegram-bot==20.8->-r requirements.txt (line 2)) (0.26.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from requests==2.31.0->-r requirements.txt (line 3)) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from requests==2.31.0->-r requirements.txt (line 3)) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from requests==2.31.0->-r requirements.txt (line 3)) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from requests==2.31.0->-r requirements.txt (line 3)) (2025.10.5)
+Requirement already satisfied: soupsieve>1.2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from beautifulsoup4==4.12.2->-r requirements.txt (line 4)) (2.8)
+Requirement already satisfied: Werkzeug>=2.3.7 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Flask==2.3.3->-r requirements.txt (line 5)) (3.1.3)
+Requirement already satisfied: Jinja2>=3.1.2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Flask==2.3.3->-r requirements.txt (line 5)) (3.1.6)
+Requirement already satisfied: itsdangerous>=2.1.2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Flask==2.3.3->-r requirements.txt (line 5)) (2.2.0)
+Requirement already satisfied: click>=8.1.3 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Flask==2.3.3->-r requirements.txt (line 5)) (8.3.0)
+Requirement already satisfied: blinker>=1.6.2 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Flask==2.3.3->-r requirements.txt (line 5)) (1.9.0)
+Requirement already satisfied: packaging in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from gunicorn==21.2.0->-r requirements.txt (line 6)) (25.0)
+Requirement already satisfied: colorama in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from click>=8.1.3->Flask==2.3.3->-r requirements.txt (line 5)) (0.4.6)
+Requirement already satisfied: anyio in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2)) (4.11.0)
+Requirement already satisfied: httpcore==1.* in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2)) (1.0.9)
+Requirement already satisfied: sniffio in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2)) (1.3.1)
+Requirement already satisfied: h11>=0.16 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from httpcore==1.*->httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2)) (0.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from Jinja2>=3.1.2->Flask==2.3.3->-r requirements.txt (line 5)) (3.0.3)
+Requirement already satisfied: typing_extensions>=4.5 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (from anyio->httpx~=0.26.0->python-telegram-bot==20.8->-r requirements.txt (line 2)) (4.15.0)
+Using cached python_telegram_bot-20.8-py3-none-any.whl (604 kB)
+Installing collected packages: python-telegram-bot
+  Attempting uninstall: python-telegram-bot
+    Found existing installation: python-telegram-bot 13.15
+    Uninstalling python-telegram-bot-13.15:
+      Successfully uninstalled python-telegram-bot-13.15
+Successfully installed python-telegram-bot-20.8
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+Starting FIREx Bot...
+Press Ctrl+C to stop
+
+2025-10-22 01:37:27,401 - __main__ - WARNING - ⚠️ BOT_TOKEN not set - Bot will not start!
+2025-10-22 01:37:27,401 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+ * Serving Flask app 'app'
+ * Debug mode: on
+2025-10-22 01:37:27,473 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.125.145.75:5000
+2025-10-22 01:37:27,473 - werkzeug - INFO - Press CTRL+C to quit
+2025-10-22 01:37:27,475 - werkzeug - INFO -  * Restarting with stat
+2025-10-22 01:37:28,415 - __main__ - INFO - 🎯 Starting bot in background thread...
+2025-10-22 01:37:28,417 - __main__ - INFO - 🚀 Starting bot in background...
+2025-10-22 01:37:28,433 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+2025-10-22 01:37:28,534 - werkzeug - WARNING -  * Debugger is active!
+2025-10-22 01:37:28,540 - werkzeug - INFO -  * Debugger PIN: 182-513-303
+C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\apscheduler\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-10-22 01:37:29,583 - __main__ - ERROR - ❌ Bot setup error: Updater.__init__() got an unexpected keyword argument 'use_context'
+2025-10-22 01:37:29,584 - __main__ - ERROR - ❌ Failed to setup bot

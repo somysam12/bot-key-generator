@@ -1,7 +1,5 @@
-# Core dependencies for FIREx Bot (Python 3.12 compatible)
 python-telegram-bot==13.15
 requests==2.31.0
 beautifulsoup4==4.12.2
 Flask==2.3.3
-gunicorn==21.2.0
 python-dotenv==1.0.0
