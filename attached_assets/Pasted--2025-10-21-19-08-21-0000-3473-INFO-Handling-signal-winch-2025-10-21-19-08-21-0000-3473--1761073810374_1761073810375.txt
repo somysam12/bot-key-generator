@@ -1,0 +1,37 @@
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:21 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:08:22,835 - app - INFO - ✅ Telegram bot setup successful
+2025-10-21 19:08:22,835 - app - INFO - 🤖 Starting bot polling...
+2025-10-21 19:08:22,835 - apscheduler.scheduler - INFO - Scheduler started
+[2025-10-21 19:08:22 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:22 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:23 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:23 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:23 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:08:23,672 - app - INFO - ✅ Bot polling started successfully!
+2025-10-21 19:08:23,672 - app - ERROR - ❌ Bot polling error: signal only works in main thread of the main interpreter
+[2025-10-21 19:08:23 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:08:23 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:09:27,825 - app - INFO - 🔄 Visiting main page first...
+[2025-10-21 19:09:28 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:28 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:28 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:09:29,962 - app - INFO - Main page status: 403
+2025-10-21 19:09:29,962 - app - INFO - 🔄 Attempting login to https://vipowner.online/FIREx/login
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:09:30,150 - app - INFO - Login response status: 403
+2025-10-21 19:09:30,151 - app - INFO - Response URL: https://vipowner.online/FIREx/login
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
+2025-10-21 19:09:30,641 - app - ERROR - 403 Forbidden - Website blocking the request
+[2025-10-21 19:09:30 +0000] [3473] [INFO] Handling signal: winch
