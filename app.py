@@ -7,6 +7,10 @@ import threading
 import time
 import pickle
 from flask import Flask
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Flask app for Render health checks
 app = Flask(__name__)
