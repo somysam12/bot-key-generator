@@ -1,0 +1,85 @@
+🍪 COOKIE EXTRACTION - VISUAL GUIDE
+═══════════════════════════════════════════════════════════
+
+METHOD: Application/Storage Tab (100% Working)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: LOGIN
+─────────────
+✅ Browser kholo (Chrome recommended)
+✅ https://vipowner.online/FIREx/ pe jao
+✅ Login karo: ishashwat / 844121
+✅ Dashboard dikhna chahiye (confirm login success)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 2: OPEN DEVELOPER TOOLS
+─────────────────────────────
+✅ F12 dabao (ya Right-click → Inspect)
+✅ Developer Tools panel khulega
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 3: FIND COOKIES TAB
+────────────────────────
+
+CHROME:
+✅ Top tabs mein "Application" pe click karo
+✅ Left sidebar mein "Cookies" expand karo (arrow click)
+✅ "https://vipowner.online" select karo
+
+FIREFOX:
+✅ Top tabs mein "Storage" pe click karo
+✅ Left sidebar mein "Cookies" expand karo
+✅ "https://vipowner.online" select karo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 4: COPY COOKIES
+────────────────────
+Ab right side mein table dikhega with cookies:
+
+┌─────────────────────┬──────────────────────────────┐
+│ Name                │ Value                        │
+├─────────────────────┼──────────────────────────────┤
+│ ci_session          │ abc123def456...              │
+│ csrf_cookie_name    │ xyz789...                    │
+│ cf_clearance        │ CloudFlare_token...          │
+└─────────────────────┴──────────────────────────────┘
+
+Important cookies (sabhi copy karo):
+✅ ci_session (MOST IMPORTANT!)
+✅ csrf_cookie_name
+✅ cf_clearance (agar hai)
+✅ Koi bhi aur cookie jo dikhe
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 5: RUN SCRIPT
+──────────────────
+Terminal mein:
+
+    python extract_cookies_simple.py
+
+Script puchega: name=value format mein enter karo
+
+Example:
+    Cookie (name=value) ya 'done': ci_session=abc123def456
+    ✅ Added: ci_session
+    
+    Cookie (name=value) ya 'done': csrf_cookie_name=xyz789
+    ✅ Added: csrf_cookie_name
+    
+    Cookie (name=value) ya 'done': done
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 6: RUN BOT
+───────────────
+    python app.py
+
+✅ Bot ab saved cookies use karega!
+✅ No login needed - direct access!
+
+═══════════════════════════════════════════════════════════
