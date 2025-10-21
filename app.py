@@ -581,12 +581,14 @@ def start_bot_background():
     except Exception as e:
         logger.error(f"❌ Background bot error: {e}")
 
-# Start bot when app starts
-if os.getenv('RENDER') == 'true':
-    logger.info("🎯 Render environment detected - Starting bot...")
+# Start bot when app starts (in both Replit and Render environments)
+if os.getenv('BOT_TOKEN'):
+    logger.info("🎯 Starting bot in background thread...")
     bot_thread = threading.Thread(target=start_bot_background)
     bot_thread.daemon = True
     bot_thread.start()
+else:
+    logger.warning("⚠️ BOT_TOKEN not set - Bot will not start!")
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
