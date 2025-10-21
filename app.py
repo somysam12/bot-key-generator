@@ -32,28 +32,28 @@ class FirexKeyBot:
     def __init__(self):
         self.session = None
         self.logged_in = False
-        self.application = None
+        self.updater = None
         
     def setup_bot(self):
         """Setup telegram bot"""
         try:
-            from telegram.ext import Application, CommandHandler, ContextTypes
-            from telegram import Update
+            from telegram.ext import Updater, CommandHandler
             
             BOT_TOKEN = os.getenv('BOT_TOKEN')
             if not BOT_TOKEN:
                 logger.error("❌ BOT_TOKEN not set!")
                 return False
             
-            # New way for python-telegram-bot v20+
-            self.application = Application.builder().token(BOT_TOKEN).build()
+            # Stable version - python-telegram-bot v13.15
+            self.updater = Updater(BOT_TOKEN, use_context=True)
+            self.dispatcher = self.updater.dispatcher
             
-            # Register handlers with proper async functions
-            self.application.add_handler(CommandHandler("start", self.start_wrapper))
-            self.application.add_handler(CommandHandler("login", self.login_wrapper))
-            self.application.add_handler(CommandHandler("getkey", self.get_key_wrapper))
-            self.application.add_handler(CommandHandler("status", self.status_wrapper))
-            self.application.add_handler(CommandHandler("help", self.help_wrapper))
+            # Register handlers
+            self.dispatcher.add_handler(CommandHandler("start", self.start))
+            self.dispatcher.add_handler(CommandHandler("login", self.login))
+            self.dispatcher.add_handler(CommandHandler("getkey", self.get_key))
+            self.dispatcher.add_handler(CommandHandler("status", self.status))
+            self.dispatcher.add_handler(CommandHandler("help", self.help_command))
             
             logger.info("✅ Telegram bot setup successful")
             return True
@@ -62,23 +62,7 @@ class FirexKeyBot:
             logger.error(f"❌ Bot setup error: {e}")
             return False
     
-    # Wrapper functions to handle async
-    async def start_wrapper(self, update, context):
-        await self.start(update, context)
-    
-    async def help_wrapper(self, update, context):
-        await self.help_command(update, context)
-    
-    async def status_wrapper(self, update, context):
-        await self.status(update, context)
-    
-    async def login_wrapper(self, update, context):
-        await self.login(update, context)
-    
-    async def get_key_wrapper(self, update, context):
-        await self.get_key(update, context)
-    
-    async def start(self, update, context):
+    def start(self, update, context):
         """Send welcome message"""
         user = update.effective_user
         welcome_text = f"""
@@ -94,9 +78,9 @@ Available Commands:
 
 Pehle /login command use karein
         """
-        await update.message.reply_text(welcome_text)
+        update.message.reply_text(welcome_text)
     
-    async def help_command(self, update, context):
+    def help_command(self, update, context):
         """Help message"""
         help_text = """
 📋 **How to use this bot:**
@@ -111,18 +95,18 @@ Pehle /login command use karein
 
 🔧 **Need help?** Contact admin.
         """
-        await update.message.reply_text(help_text)
+        update.message.reply_text(help_text)
     
-    async def status(self, update, context):
+    def status(self, update, context):
         """Check login status"""
         if self.logged_in and self.session:
-            await update.message.reply_text("✅ Bot logged in hai aur ready hai!")
+            update.message.reply_text("✅ Bot logged in hai aur ready hai!")
         else:
-            await update.message.reply_text("❌ Bot logged in nahi hai. `/login` use karein.")
+            update.message.reply_text("❌ Bot logged in nahi hai. `/login` use karein.")
     
-    async def login(self, update, context):
+    def login(self, update, context):
         """Login to FIREx website"""
-        await update.message.reply_text("🔄 FIREx mein login ho raha hai...")
+        update.message.reply_text("🔄 FIREx mein login ho raha hai...")
         
         try:
             self.session = requests.Session()
@@ -151,20 +135,20 @@ Pehle /login command use karein
             if response.status_code == 200:
                 if "logout" in response.text.lower() or "dashboard" in response.text.lower():
                     self.logged_in = True
-                    await update.message.reply_text("✅ Login successful! Ab aap `/getkey` use kar sakte hain.")
+                    update.message.reply_text("✅ Login successful! Ab aap `/getkey` use kar sakte hain.")
                     logger.info("FIREx login successful")
                 else:
-                    await update.message.reply_text("❌ Login failed. Please check credentials.")
+                    update.message.reply_text("❌ Login failed. Please check credentials.")
             else:
-                await update.message.reply_text(f"❌ Login failed. HTTP Status: {response.status_code}")
+                update.message.reply_text(f"❌ Login failed. HTTP Status: {response.status_code}")
                 
         except Exception as e:
-            await update.message.reply_text(f"❌ Login error: {str(e)}")
+            update.message.reply_text(f"❌ Login error: {str(e)}")
     
-    async def get_key(self, update, context):
+    def get_key(self, update, context):
         """Generate key with specified duration"""
         if not self.logged_in or not self.session:
-            await update.message.reply_text("❌ Pehle `/login` command use karein.")
+            update.message.reply_text("❌ Pehle `/login` command use karein.")
             return
         
         duration_map = {
@@ -180,7 +164,7 @@ Pehle /login command use karein
             duration_arg = context.args[0].lower()
             duration = duration_map.get(duration_arg, "1day")
         
-        await update.message.reply_text(f"🔄 {duration} key generate ho rahi hai...")
+        update.message.reply_text(f"🔄 {duration} key generate ho rahi hai...")
         
         try:
             key_url = "https://vipowner.online/FIREx/keys/generate"
@@ -200,15 +184,15 @@ Pehle /login command use karein
 
 ✅ **Enjoy!**
                     """
-                    await update.message.reply_text(message, parse_mode='Markdown')
+                    update.message.reply_text(message, parse_mode='Markdown')
                     logger.info(f"Key generated: {duration}")
                 else:
-                    await update.message.reply_text("⚠️ Key generate hui lekin extract nahi ho payi.")
+                    update.message.reply_text("⚠️ Key generate hui lekin extract nahi ho payi.")
             else:
-                await update.message.reply_text(f"❌ Key generation failed. Status: {response.status_code}")
+                update.message.reply_text(f"❌ Key generation failed. Status: {response.status_code}")
                 
         except Exception as e:
-            await update.message.reply_text(f"❌ Error: {str(e)}")
+            update.message.reply_text(f"❌ Error: {str(e)}")
     
     def _extract_key_from_response(self, response):
         """Extract key from response"""
@@ -253,8 +237,9 @@ Pehle /login command use karein
         try:
             if self.setup_bot():
                 logger.info("🤖 Starting bot polling...")
-                self.application.run_polling()
+                self.updater.start_polling()
                 logger.info("✅ Bot polling started successfully!")
+                self.updater.idle()
             else:
                 logger.error("❌ Failed to setup bot")
         except Exception as e:
