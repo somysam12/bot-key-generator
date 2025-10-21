@@ -7,6 +7,7 @@ Ye ek Telegram bot hai jo FIREx website (vipowner.online/FIREx) se automatically
 - Telegram bot se direct key generation with inline keyboard buttons
 - Multiple duration options (1day, 1week, 1month, 3months)
 - Automatic website login with improved headers to avoid 403 errors
+- **Session persistence** (Pyrogram jaise) - Ek baar login, phir automatic!
 - Flask web server for health checks (Render deployment ke liye)
 - User-friendly inline buttons for all commands
 - Secure credential management (environment variables required)
@@ -103,6 +104,16 @@ Render dashboard me Environment section me ye variables add karo:
 - Added better browser-like headers (Chrome 120 User-Agent)
 - Added Referer, Accept-Language, and other realistic headers
 - Pre-visit to main page before login to get cookies
+
+### Session Persistence (Pyrogram Style)
+- **Session Save**: Login successful hone ke baad session cookies automatically save ho jati hain `firex_session.pkl` file mein
+- **Session Load**: Bot restart hone pe automatically saved session load hota hai
+- **Session Validation**: Loaded session check hota hai ki valid hai ya nahi
+- **Auto Cleanup**: Agar session expire ho gaya to automatic delete ho jata hai
+- **Benefits**: 
+  - Baar-baar login nahi karna padta
+  - Bot restart ke baad bhi session maintained rehta hai
+  - Stale sessions automatically clean ho jate hain
 
 ## Last Updated
 October 21, 2025
