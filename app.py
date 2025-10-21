@@ -353,8 +353,13 @@ Pehle login button dabayein!
     def login(self, update, context):
         """Login command handler"""
         update.message.reply_text("🔄 FIREx mein login ho raha hai...")
+        update.message.reply_text("🌐 Proxy se connect kar rahe hain...")
         
         try:
+            # Try with proxy first
+            from proxy_helper import get_proxy_manager
+            proxy_mgr = get_proxy_manager()
+            
             self.session = requests.Session()
             
             # Improved headers to avoid 403 error
