@@ -18,6 +18,10 @@ def home():
 def health():
     return "✅ Healthy", 200
 
+@app.route('/start-bot')
+def start_bot():
+    return "Bot is ready! Use Telegram to interact.", 200
+
 # Logging setup
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -95,22 +99,17 @@ Pehle /login command use karein
             
             # Modern headers
             headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                 'Accept-Language': 'en-US,en;q=0.9',
-                'Accept-Encoding': 'gzip, deflate, br',
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Origin': 'https://vipowner.online',
                 'Referer': 'https://vipowner.online/FIREx/login',
-                'Sec-Fetch-Dest': 'document',
-                'Sec-Fetch-Mode': 'navigate',
-                'Sec-Fetch-Site': 'same-origin',
-                'Cache-Control': 'max-age=0'
             }
             
             self.session.headers.update(headers)
             
-            # Login credentials - Environment variables se secure way
+            # Login credentials - Environment variables se
             login_data = {
                 'username': os.getenv('FIREX_USERNAME', 'ishashwat'),
                 'password': os.getenv('FIREX_PASSWORD', '844121')
@@ -268,44 +267,57 @@ Pehle /login command use karein
         
         return (has_upper or has_digits) and (len(text) >= 8)
     
-    def run(self):
-        """Start the bot"""
-        # Webhook setup for Render
-        PORT = int(os.environ.get('PORT', 8443))
-        WEBHOOK_URL = os.getenv('WEBHOOK_URL', '')
-        
-        if WEBHOOK_URL:
-            # Webhook mode for production
-            self.updater.start_webhook(
-                listen="0.0.0.0",
-                port=PORT,
-                url_path=self.token,
-                webhook_url=f"{WEBHOOK_URL}/{self.token}"
-            )
-        else:
-            # Polling mode for development
-            self.updater.start_polling()
-        
-        logger.info("🤖 FIREx Bot started successfully!")
+    def run_polling(self):
+        """Start bot with polling - Render compatible"""
+        self.updater.start_polling()
+        logger.info("🤖 FIREx Bot started successfully with polling!")
         self.updater.idle()
 
 # Initialize and run bot
-def main():
+def setup_bot():
     # Get bot token from environment variable
     BOT_TOKEN = os.getenv('BOT_TOKEN')
     
     if not BOT_TOKEN:
         logger.error("❌ BOT_TOKEN environment variable not set!")
-        return
+        return None
     
     bot = FirexKeyBot(BOT_TOKEN)
-    bot.run()
+    return bot
+
+# Global bot instance
+bot_instance = None
+
+def start_bot_polling():
+    """Start bot in polling mode"""
+    global bot_instance
+    try:
+        bot_instance = setup_bot()
+        if bot_instance:
+            bot_instance.run_polling()
+        else:
+            logger.error("Failed to setup bot")
+    except Exception as e:
+        logger.error(f"Bot polling error: {e}")
 
 if __name__ == '__main__':
-    # Run Flask app for Render
+    # Check if running on Render
     if os.getenv('RENDER', '').lower() == 'true':
-        # Render pe sirf Flask app run karein
-        app.run(host='0.0.0.0', port=5000)
+        logger.info("🚀 Running on Render - Starting both Flask and Bot...")
+        
+        # Import threading for running bot in background
+        import threading
+        
+        # Start bot in a separate thread
+        bot_thread = threading.Thread(target=start_bot_polling)
+        bot_thread.daemon = True
+        bot_thread.start()
+        
+        # Start Flask app
+        port = int(os.environ.get('PORT', 5000))
+        app.run(host='0.0.0.0', port=port)
+        
     else:
-        # Local development mein bot run karein
-        main()
+        # Local development - just run bot
+        logger.info("💻 Running locally - Starting Bot only...")
+        start_bot_polling()
