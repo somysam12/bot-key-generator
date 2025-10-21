@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import re
 import threading
 import time
+import pickle
 from flask import Flask
 
 # Flask app for Render health checks
@@ -34,6 +35,14 @@ class FirexKeyBot:
         self.session = None
         self.logged_in = False
         self.updater = None
+        self.session_file = 'firex_session.pkl'
+        
+        # Try to load saved session on startup and validate it
+        if self._load_session():
+            logger.info("🔍 Validating loaded session...")
+            if not self._validate_session():
+                logger.warning("⚠️ Session expired, clearing...")
+                self._clear_session()
         
     def setup_bot(self):
         """Setup telegram bot"""
@@ -65,6 +74,74 @@ class FirexKeyBot:
         except Exception as e:
             logger.error(f"❌ Bot setup error: {e}")
             return False
+    
+    def _save_session(self):
+        """Save session cookies to file (like Pyrogram session)"""
+        try:
+            if self.session and self.logged_in:
+                session_data = {
+                    'cookies': self.session.cookies.get_dict(),
+                    'headers': dict(self.session.headers)
+                }
+                with open(self.session_file, 'wb') as f:
+                    pickle.dump(session_data, f)
+                logger.info("💾 Session saved successfully!")
+        except Exception as e:
+            logger.error(f"❌ Failed to save session: {e}")
+    
+    def _load_session(self):
+        """Load saved session from file (like Pyrogram session)"""
+        try:
+            if os.path.exists(self.session_file):
+                with open(self.session_file, 'rb') as f:
+                    session_data = pickle.load(f)
+                
+                self.session = requests.Session()
+                
+                # Restore cookies
+                for name, value in session_data.get('cookies', {}).items():
+                    self.session.cookies.set(name, value)
+                
+                # Restore headers
+                self.session.headers.update(session_data.get('headers', {}))
+                
+                self.logged_in = True
+                logger.info("📂 Saved session loaded successfully!")
+                return True
+        except Exception as e:
+            logger.error(f"❌ Failed to load session: {e}")
+        return False
+    
+    def _validate_session(self):
+        """Check if saved session is still valid"""
+        try:
+            if self.session and self.logged_in:
+                # Try to access a protected page to check if session is valid
+                test_url = "https://vipowner.online/FIREx/"
+                response = self.session.get(test_url, timeout=10)
+                
+                if response.status_code == 200 and ("logout" in response.text.lower() or "dashboard" in response.text.lower()):
+                    logger.info("✅ Saved session is still valid!")
+                    return True
+                else:
+                    logger.warning("⚠️ Saved session expired, need to login again")
+                    self.logged_in = False
+                    return False
+        except Exception as e:
+            logger.error(f"❌ Session validation failed: {e}")
+            self.logged_in = False
+        return False
+    
+    def _clear_session(self):
+        """Clear saved session file and reset session state"""
+        try:
+            if os.path.exists(self.session_file):
+                os.remove(self.session_file)
+                logger.info("🗑️ Stale session file deleted")
+            self.session = None
+            self.logged_in = False
+        except Exception as e:
+            logger.error(f"❌ Failed to clear session: {e}")
     
     def start(self, update, context):
         """Send welcome message with inline buttons"""
@@ -256,6 +333,9 @@ Pehle login button dabayein!
                     
                     query.message.reply_text("✅ Login successful! Ab key generate kar sakte hain:", reply_markup=reply_markup)
                     logger.info("✅ FIREx login successful")
+                    
+                    # Save session for future use (like Pyrogram)
+                    self._save_session()
                 else:
                     query.message.reply_text("❌ Login failed. Please check credentials or website might be blocking.")
                     logger.error(f"Login failed - Response preview: {response.text[:200]}")
@@ -357,6 +437,9 @@ Pehle login button dabayein!
                     
                     update.message.reply_text("✅ Login successful! Ab key generate kar sakte hain:", reply_markup=reply_markup)
                     logger.info("✅ FIREx login successful")
+                    
+                    # Save session for future use (like Pyrogram)
+                    self._save_session()
                 else:
                     update.message.reply_text("❌ Login failed. Please check credentials or website might be blocking.")
                     logger.error(f"Login failed - Response preview: {response.text[:200]}")

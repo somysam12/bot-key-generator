@@ -1,3 +1,6 @@
+# Session files (like Pyrogram session)
+firex_session.pkl
+
 __pycache__/
 *.py[cod]
 *$py.class
