@@ -1,10 +1,10 @@
 import os
 import logging
-from flask import Flask
 import requests
 from bs4 import BeautifulSoup
 import re
 import threading
+from flask import Flask
 
 # Flask app for Render health checks
 app = Flask(__name__)
@@ -17,9 +17,9 @@ def home():
 def health():
     return "✅ Healthy", 200
 
-@app.route('/start-bot')
-def start_bot():
-    return "Bot is ready! Use Telegram to interact.", 200
+@app.route('/test')
+def test():
+    return "🚀 Bot Server Active", 200
 
 # Logging setup
 logging.basicConfig(
@@ -32,7 +32,7 @@ class FirexKeyBot:
     def __init__(self):
         self.session = None
         self.logged_in = False
-        self.bot = None
+        self.updater = None
         
     def setup_bot(self):
         """Setup telegram bot"""
@@ -58,16 +58,12 @@ class FirexKeyBot:
             logger.info("✅ Telegram bot setup successful")
             return True
             
-        except ImportError as e:
-            logger.error(f"❌ Telegram import error: {e}")
-            return False
         except Exception as e:
             logger.error(f"❌ Bot setup error: {e}")
             return False
     
     def start(self, update, context):
         """Send welcome message"""
-        from telegram import Update
         user = update.effective_user
         welcome_text = f"""
 🔥 Namaste {user.first_name}! FIREx Key Generator Bot 🔥
@@ -115,25 +111,19 @@ Pehle /login command use karein
         try:
             self.session = requests.Session()
             
-            # Modern headers
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.9',
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Origin': 'https://vipowner.online',
-                'Referer': 'https://vipowner.online/FIREx/login',
             }
             
             self.session.headers.update(headers)
             
-            # Login credentials
             login_data = {
                 'username': os.getenv('FIREX_USERNAME', 'ishashwat'),
                 'password': os.getenv('FIREX_PASSWORD', '844121')
             }
             
-            # Login request
             login_url = "https://vipowner.online/FIREx/login"
             response = self.session.post(
                 login_url, 
@@ -142,7 +132,6 @@ Pehle /login command use karein
                 timeout=30
             )
             
-            # Check login success
             if response.status_code == 200:
                 if "logout" in response.text.lower() or "dashboard" in response.text.lower():
                     self.logged_in = True
@@ -153,10 +142,6 @@ Pehle /login command use karein
             else:
                 update.message.reply_text(f"❌ Login failed. HTTP Status: {response.status_code}")
                 
-        except requests.exceptions.Timeout:
-            update.message.reply_text("❌ Login timeout. Website slow hai, please try again.")
-        except requests.exceptions.ConnectionError:
-            update.message.reply_text("❌ Connection error. Internet check karein.")
         except Exception as e:
             update.message.reply_text(f"❌ Login error: {str(e)}")
     
@@ -166,7 +151,6 @@ Pehle /login command use karein
             update.message.reply_text("❌ Pehle `/login` command use karein.")
             return
         
-        # Duration handling
         duration_map = {
             '1day': '1day',
             '1week': '1week', 
@@ -174,7 +158,7 @@ Pehle /login command use karein
             '3months': '3months'
         }
         
-        duration = "1day"  # default
+        duration = "1day"
         
         if context.args:
             duration_arg = context.args[0].lower()
@@ -183,18 +167,10 @@ Pehle /login command use karein
         update.message.reply_text(f"🔄 {duration} key generate ho rahi hai...")
         
         try:
-            # Key generation
             key_url = "https://vipowner.online/FIREx/keys/generate"
+            key_data = {'duration': duration}
             
-            key_data = {
-                'duration': duration
-            }
-            
-            response = self.session.post(
-                key_url, 
-                data=key_data,
-                timeout=30
-            )
+            response = self.session.post(key_url, data=key_data, timeout=30)
             
             if response.status_code == 200:
                 generated_key = self._extract_key_from_response(response)
@@ -209,40 +185,35 @@ Pehle /login command use karein
 ✅ **Enjoy!**
                     """
                     update.message.reply_text(message, parse_mode='Markdown')
-                    logger.info(f"Key generated successfully: {duration}")
+                    logger.info(f"Key generated: {duration}")
                 else:
-                    update.message.reply_text(
-                        "⚠️ Key generate hui lekin extract nahi ho payi. "
-                        "Kripya manually website check karein."
-                    )
+                    update.message.reply_text("⚠️ Key generate hui lekin extract nahi ho payi.")
             else:
                 update.message.reply_text(f"❌ Key generation failed. Status: {response.status_code}")
                 
-        except requests.exceptions.Timeout:
-            update.message.reply_text("❌ Key generation timeout. Please try again.")
         except Exception as e:
             update.message.reply_text(f"❌ Error: {str(e)}")
     
     def _extract_key_from_response(self, response):
-        """Extract key from response using multiple methods"""
+        """Extract key from response"""
         try:
             soup = BeautifulSoup(response.content, 'html.parser')
             
-            # Method 1: Input fields
+            # Input fields check
             input_fields = soup.find_all('input', {'type': 'text'})
             for field in input_fields:
                 value = field.get('value', '').strip()
-                if value and self._looks_like_key(value):
+                if value and len(value) >= 8:
                     return value
             
-            # Method 2: Code blocks
-            key_elements = soup.find_all(['code', 'pre'])
-            for element in key_elements:
+            # Code blocks check
+            code_elements = soup.find_all(['code', 'pre'])
+            for element in code_elements:
                 text = element.get_text().strip()
-                if self._looks_like_key(text):
+                if text and len(text) >= 8:
                     return text
             
-            # Method 3: Regex patterns
+            # Regex patterns
             text_content = soup.get_text()
             key_patterns = [
                 r'[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}',
@@ -261,23 +232,13 @@ Pehle /login command use karein
             logger.error(f"Key extraction error: {e}")
             return None
     
-    def _looks_like_key(self, text):
-        """Check if text looks like a key"""
-        if not text or len(text) < 8:
-            return False
-        
-        has_upper = bool(re.search(r'[A-Z]', text))
-        has_digits = bool(re.search(r'\d', text))
-        has_dashes = '-' in text
-        
-        return (has_upper or has_digits) and (len(text) >= 8)
-    
     def run_polling(self):
         """Start bot with polling"""
         try:
             if self.setup_bot():
                 logger.info("🤖 Starting bot polling...")
                 self.updater.start_polling()
+                logger.info("✅ Bot polling started successfully!")
                 self.updater.idle()
             else:
                 logger.error("❌ Failed to setup bot")
@@ -290,28 +251,19 @@ firex_bot = FirexKeyBot()
 def start_bot_background():
     """Start bot in background thread"""
     try:
+        logger.info("🚀 Starting bot in background...")
         firex_bot.run_polling()
     except Exception as e:
-        logger.error(f"Background bot error: {e}")
-
-@app.route('/test-bot')
-def test_bot():
-    """Test bot setup"""
-    try:
-        if firex_bot.setup_bot():
-            return "✅ Bot setup successful!", 200
-        else:
-            return "❌ Bot setup failed!", 500
-    except Exception as e:
-        return f"❌ Bot test error: {str(e)}", 500
+        logger.error(f"❌ Background bot error: {e}")
 
 # Start bot when app starts
-if os.getenv('RENDER', '').lower() == 'true':
-    logger.info("🚀 Starting bot in background thread...")
+if os.getenv('RENDER') == 'true':
+    logger.info("🎯 Render environment detected")
     bot_thread = threading.Thread(target=start_bot_background)
     bot_thread.daemon = True
     bot_thread.start()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
+    logger.info(f"🌐 Starting Flask app on port {port}")
     app.run(host='0.0.0.0', port=port)
