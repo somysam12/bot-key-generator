@@ -30,7 +30,8 @@ if not exist .env (
 )
 
 echo Checking Python packages...
-pip install -r requirements.txt --quiet
+echo This may take 1-2 minutes for first time...
+pip install -r requirements.txt
 
 echo.
 echo Starting FIREx Bot...

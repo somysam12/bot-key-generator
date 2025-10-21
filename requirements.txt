@@ -1,11 +1,6 @@
+# Core dependencies for FIREx Bot
 python-telegram-bot==13.15
 requests==2.31.0
 beautifulsoup4==4.12.2
 Flask==2.3.3
 gunicorn==21.2.0
-2captcha-python
-cloudscraper
-selenium
-undetected-chromedriver
-curl-cffi
-PySocks

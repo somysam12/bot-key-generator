@@ -1,0 +1,82 @@
+========================================
+FIREx Bot - Local Runner
+========================================
+
+Checking Python packages...
+  error: subprocess-exited-with-error
+
+  × Building wheel for curl-cffi (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [55 lines of output]
+      C:\Users\Shashwat\AppData\Local\Temp\pip-build-env-2k5ry242\overlay\Lib\site-packages\setuptools\config\_apply_pyprojecttoml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is deprecated
+      !!
+
+              ********************************************************************************
+              Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+
+              By 2026-Feb-18, you need to update your project and remove deprecated calls
+              or your builds will no longer be supported.
+
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+
+      !!
+        corresp(dist, value, root_dir)
+      Using ./lib32 to store libcurl-impersonate
+      .so files already downloaded.
+      Files for linking
+      ['bin', 'brotlicommon.lib', 'brotlidec.lib', 'brotlienc.lib', 'crypto.lib', 'include', 'lib', 'libcurl.dll', 'libcurl.lib', 'libcurl_imp.lib', 'nghttp2.lib', 'nghttp3.lib', 'ngtcp2.lib', 'ngtcp2_crypto_boringssl.lib', 'share', 'ssl.lib', 'zlib.dll', 'zlib.lib', 'zstd.lib']
+      running bdist_wheel
+      running build
+      running build_py
+      creating build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\aio.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\const.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\curl.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\utils.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\_asyncio_selector.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\__init__.py -> build\lib.win32-cpython-314\curl_cffi
+      copying curl_cffi\__version__.py -> build\lib.win32-cpython-314\curl_cffi
+      creating build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\cookies.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\errors.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\exceptions.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\headers.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\impersonate.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\models.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\session.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\utils.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\websockets.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      copying curl_cffi\requests\__init__.py -> build\lib.win32-cpython-314\curl_cffi\requests
+      running egg_info
+      writing curl_cffi.egg-info\PKG-INFO
+      writing dependency_links to curl_cffi.egg-info\dependency_links.txt
+      writing requirements to curl_cffi.egg-info\requires.txt
+      writing top-level names to curl_cffi.egg-info\top_level.txt
+      reading manifest file 'curl_cffi.egg-info\SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      adding license file 'LICENSE'
+      writing manifest file 'curl_cffi.egg-info\SOURCES.txt'
+      copying curl_cffi\py.typed -> build\lib.win32-cpython-314\curl_cffi
+      running build_ext
+      generating cffi module 'build\\temp.win32-cpython-314\\Release\\curl_cffi._wrapper.c'
+      creating build\temp.win32-cpython-314\Release
+      building 'curl_cffi._wrapper' extension
+      error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for curl-cffi
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> curl-cffi
+
+Starting FIREx Bot...
+Press Ctrl+C to stop
+
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\Documents\Downloads\bot-key-generator-main\bot-key-generator-main\app.py", line 3, in <module>
+    import requests
+ModuleNotFoundError: No module named 'requests'
+Press any key to continue . . .
