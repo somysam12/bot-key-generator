@@ -1,0 +1,49 @@
+🔥 FIREx ULTIMATE Session Creator (2025) 🔥
+   TLS Fingerprint + Advanced Bypass
+============================================================
+
+📝 Enter FIREx Credentials:
+----------------------------------------
+Username: ishashwat 
+Password: 844121
+
+🎯 Trying advanced bypass methods...
+
+
+🔷 Method 1: curl-cffi (TLS Fingerprint Bypass)
+   Latest 2025 technique - Browser TLS mimicking!
+------------------------------------------------------------
+2025-10-21 18:50:19,048 - INFO - 🌐 Visiting main page with Chrome TLS fingerprint...
+2025-10-21 18:50:19,154 - INFO - ✅ Main page status: 403
+⚠️  Main page returned 403
+2025-10-21 18:50:21,155 - INFO - 🔐 Attempting login with Chrome TLS fingerprint...
+2025-10-21 18:50:22,624 - INFO - 📊 Login response: 403
+2025-10-21 18:50:22,624 - INFO - 📍 Final URL: https://vipowner.online/FIREx/login
+❌ curl-cffi failed - Status: 403
+
+⏭️  Trying Selenium method...
+
+
+🔷 Method 2: Selenium (Fixed for Replit)
+------------------------------------------------------------
+🚀 Trying undetected ChromeDriver...
+2025-10-21 18:50:25,373 - INFO - patching driver executable /nix/store/8zj50jw4w0hby47167kqqsaqw4mm5bkd-chromedriver-unwrapped-138.0.7204.100/bin/chromedriver
+⚠️  Undetected Chrome failed: [Errno 13] Permission denied: '/nix/store/8zj50jw4w0hby47167kqqsaqw4mm5bkd-chromedriver-unwrapped-138.0.7204.100/bin/chromedriver'
+🔄 Trying regular Selenium...
+❌ Selenium error: Message: Service /home/runner/.cache/selenium/chromedriver/linux64/141.0.7390.78/chromedriver unexpectedly exited. Status code was: 127
+
+2025-10-21 18:50:45,210 - ERROR - Selenium exception: Message: Service /home/runner/.cache/selenium/chromedriver/linux64/141.0.7390.78/chromedriver unexpectedly exited. Status code was: 127
+
+
+😞 Both advanced methods failed.
+
+💡 Possible solutions:
+   1. Website might have strong anti-bot protection
+   2. Try using a VPN or different IP
+   3. Check if credentials are correct
+   4. Website structure might have changed
+
+
+❌ Session creation failed
+
+2025-10-21 18:50:45,210 - INFO - ensuring close
