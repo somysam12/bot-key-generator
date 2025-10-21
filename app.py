@@ -48,12 +48,12 @@ class FirexKeyBot:
             # New way for python-telegram-bot v20+
             self.application = Application.builder().token(BOT_TOKEN).build()
             
-            # Register handlers
-            self.application.add_handler(CommandHandler("start", self.start))
-            self.application.add_handler(CommandHandler("login", self.login))
-            self.application.add_handler(CommandHandler("getkey", self.get_key))
-            self.application.add_handler(CommandHandler("status", self.status))
-            self.application.add_handler(CommandHandler("help", self.help_command))
+            # Register handlers with proper async functions
+            self.application.add_handler(CommandHandler("start", self.start_wrapper))
+            self.application.add_handler(CommandHandler("login", self.login_wrapper))
+            self.application.add_handler(CommandHandler("getkey", self.get_key_wrapper))
+            self.application.add_handler(CommandHandler("status", self.status_wrapper))
+            self.application.add_handler(CommandHandler("help", self.help_wrapper))
             
             logger.info("✅ Telegram bot setup successful")
             return True
@@ -62,7 +62,23 @@ class FirexKeyBot:
             logger.error(f"❌ Bot setup error: {e}")
             return False
     
-    async def start(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Wrapper functions to handle async
+    async def start_wrapper(self, update, context):
+        await self.start(update, context)
+    
+    async def help_wrapper(self, update, context):
+        await self.help_command(update, context)
+    
+    async def status_wrapper(self, update, context):
+        await self.status(update, context)
+    
+    async def login_wrapper(self, update, context):
+        await self.login(update, context)
+    
+    async def get_key_wrapper(self, update, context):
+        await self.get_key(update, context)
+    
+    async def start(self, update, context):
         """Send welcome message"""
         user = update.effective_user
         welcome_text = f"""
@@ -80,7 +96,7 @@ Pehle /login command use karein
         """
         await update.message.reply_text(welcome_text)
     
-    async def help_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def help_command(self, update, context):
         """Help message"""
         help_text = """
 📋 **How to use this bot:**
@@ -97,14 +113,14 @@ Pehle /login command use karein
         """
         await update.message.reply_text(help_text)
     
-    async def status(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def status(self, update, context):
         """Check login status"""
         if self.logged_in and self.session:
             await update.message.reply_text("✅ Bot logged in hai aur ready hai!")
         else:
             await update.message.reply_text("❌ Bot logged in nahi hai. `/login` use karein.")
     
-    async def login(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def login(self, update, context):
         """Login to FIREx website"""
         await update.message.reply_text("🔄 FIREx mein login ho raha hai...")
         
@@ -145,7 +161,7 @@ Pehle /login command use karein
         except Exception as e:
             await update.message.reply_text(f"❌ Login error: {str(e)}")
     
-    async def get_key(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def get_key(self, update, context):
         """Generate key with specified duration"""
         if not self.logged_in or not self.session:
             await update.message.reply_text("❌ Pehle `/login` command use karein.")
