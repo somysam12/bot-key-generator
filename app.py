@@ -674,15 +674,17 @@ def start_bot_background():
         logger.error(f"❌ Background bot error: {e}")
 
 # Start bot when app starts (in both Replit and Render environments)
-if os.getenv('BOT_TOKEN'):
+# Only start in main process, not in Flask reloader process
+if os.getenv('BOT_TOKEN') and os.environ.get('WERKZEUG_RUN_MAIN') != 'true':
     logger.info("🎯 Starting bot in background thread...")
     bot_thread = threading.Thread(target=start_bot_background)
     bot_thread.daemon = True
     bot_thread.start()
-else:
+elif not os.getenv('BOT_TOKEN'):
     logger.warning("⚠️ BOT_TOKEN not set - Bot will not start!")
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     logger.info(f"🌐 Starting Flask app on port {port}")
-    app.run(host='0.0.0.0', port=port)
+    # Disable debug mode to prevent multiple bot instances
+    app.run(host='0.0.0.0', port=port, debug=False)

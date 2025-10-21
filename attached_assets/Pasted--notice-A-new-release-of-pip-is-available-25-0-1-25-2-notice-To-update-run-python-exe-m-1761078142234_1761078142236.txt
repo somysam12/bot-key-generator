@@ -1,0 +1,907 @@
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+PS C:\Users\Shashwat\Documents\Downloads\bot-key-generator\bot-key-generator> pip install urllib3==1.26.15
+Requirement already satisfied: urllib3==1.26.15 in c:\users\shashwat\appdata\local\programs\python\python312-32\lib\site-packages (1.26.15)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+PS C:\Users\Shashwat\Documents\Downloads\bot-key-generator\bot-key-generator> python app.py
+2025-10-22 01:45:46,375 - __main__ - INFO - 🎯 Starting bot in background thread...
+2025-10-22 01:45:46,376 - __main__ - INFO - 🚀 Starting bot in background...
+2025-10-22 01:45:46,377 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+ * Serving Flask app 'app'
+ * Debug mode: on
+2025-10-22 01:45:46,460 - werkzeug - INFO - WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.125.145.75:5000
+2025-10-22 01:45:46,460 - werkzeug - INFO - Press CTRL+C to quit
+2025-10-22 01:45:46,465 - werkzeug - INFO -  * Restarting with stat
+C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\apscheduler\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-10-22 01:45:47,127 - __main__ - INFO - ✅ Telegram bot setup successful
+2025-10-22 01:45:47,127 - __main__ - INFO - 🤖 Starting bot polling...
+2025-10-22 01:45:47,128 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-22 01:45:47,363 - __main__ - INFO - 🎯 Starting bot in background thread...
+2025-10-22 01:45:47,364 - __main__ - INFO - 🚀 Starting bot in background...
+2025-10-22 01:45:47,364 - __main__ - INFO - 🌐 Starting Flask app on port 5000
+2025-10-22 01:45:47,424 - werkzeug - WARNING -  * Debugger is active!
+2025-10-22 01:45:47,435 - werkzeug - INFO -  * Debugger PIN: 182-513-303
+C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py:49: UserWarning: python-telegram-bot is using upstream urllib3. This is allowed but not supported by python-telegram-bot maintainers.
+  warnings.warn(
+C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\apscheduler\__init__.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import get_distribution, DistributionNotFound
+2025-10-22 01:45:48,193 - __main__ - INFO - ✅ Telegram bot setup successful
+2025-10-22 01:45:48,195 - __main__ - INFO - 🤖 Starting bot polling...
+2025-10-22 01:45:48,196 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-22 01:45:48,949 - __main__ - INFO - ✅ Bot polling started successfully!
+2025-10-22 01:45:48,950 - __main__ - ERROR - ❌ Bot polling error: signal only works in main thread of the main interpreter
+2025-10-22 01:45:49,692 - __main__ - INFO - ✅ Bot polling started successfully!
+2025-10-22 01:45:49,692 - __main__ - ERROR - ❌ Bot polling error: signal only works in main thread of the main interpreter
+2025-10-22 01:45:52,921 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:52,922 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:53,331 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:53,331 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:57,554 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:57,554 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:58,823 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:45:58,824 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:03,561 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:03,562 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:04,781 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:04,783 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:09,577 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:09,577 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:10,311 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:10,312 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:16,917 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:16,917 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:18,459 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:18,460 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:26,407 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:26,407 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:28,403 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:28,404 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:39,248 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:39,248 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:39,634 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:39,634 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:54,255 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:54,288 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:55,020 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:46:55,020 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:12,393 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:12,394 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:38,335 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:38,342 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:42,602 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:42,603 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:47:58,083 - __main__ - INFO - 🔄 Visiting main page first...
+2025-10-22 01:48:01,778 - __main__ - INFO - Main page status: 403
+2025-10-22 01:48:01,778 - __main__ - ERROR - ❌ FIREX_USERNAME and FIREX_PASSWORD must be set!
+2025-10-22 01:48:21,267 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:21,267 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:25,488 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:25,488 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:55,725 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:55,725 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:59,977 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:48:59,977 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:49:30,206 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:49:30,206 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:49:34,442 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:49:34,442 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:04,706 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:04,733 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:08,965 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:08,965 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:40,978 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:40,979 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:46,332 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:50:46,332 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:16,550 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:16,550 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:20,775 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:20,791 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:49,594 - __main__ - INFO - 🔄 Visiting main page first...
+2025-10-22 01:51:51,037 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:53,839 - __main__ - INFO - Main page status: 403
+2025-10-22 01:51:53,839 - __main__ - ERROR - ❌ FIREX_USERNAME and FIREX_PASSWORD must be set!
+2025-10-22 01:51:54,433 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:55,338 - telegram.ext.updater - ERROR - Error while getting Updates: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-10-22 01:51:55,338 - telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 651, in _network_loop_retry
+    if not action_cb():
+           ^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\updater.py", line 602, in polling_action_cb
+    updates = self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\ext\extbot.py", line 228, in get_updates
+    updates = super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 134, in decorator
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 3140, in get_updates
+    self._post(
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\bot.py", line 299, in _post
+    return self.request.post(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 361, in post
+    result = self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Shashwat\AppData\Local\Programs\Python\Python312-32\Lib\site-packages\telegram\utils\request.py", line 283, in _request_wrapper
+    raise Conflict(message)
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
